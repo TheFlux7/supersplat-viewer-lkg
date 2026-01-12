@@ -1,0 +1,3 @@
+[submodule "looking-glass-webxr"]
+	path = looking-glass-webxr
+	url = https://github.com/TheFlux7/looking-glass-webxr.git

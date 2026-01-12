@@ -18,7 +18,7 @@ import { initXr } from './xr';
 import { version as appVersion } from '../package.json';
 
 //@ts-ignore
-import { LookingGlassWebXRPolyfill } from 'https://unpkg.com/@lookingglass/webxr@0.6.0/dist/bundle/webxr.js'
+import { LookingGlassWebXRPolyfill } from '../looking-glass-webxr/dist/bundle/webxr.js';
 
 // Initialize Looking Glass WebXR polyfill if available (no hard dependency)
 LookingGlassWebXRPolyfill.init({
