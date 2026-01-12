@@ -60,8 +60,10 @@
     "typescript": "5.9.3"
   },
   "scripts": {
-    "build": "rollup -c",
-    "develop": "concurrently --kill-others \"npm run watch\" \"npm run serve\"",
+    "postinstall": "npm run build:submodules",
+    "build:submodules": "cd looking-glass-webxr && npm install && npm run build_dev",
+    "build": "npm run build:submodules && rollup -c",
+    "develop": "npm run build:submodules && concurrently --kill-others \"npm run watch\" \"npm run serve\"",
     "lint": "eslint src rollup.config.mjs eslint.config.mjs",
     "lint:fix": "eslint src rollup.config.mjs eslint.config.mjs --fix",
     "publint": "publint",
