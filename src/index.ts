@@ -17,6 +17,19 @@ import { Viewer } from './viewer';
 import { initXr } from './xr';
 import { version as appVersion } from '../package.json';
 
+//@ts-ignore
+import { LookingGlassWebXRPolyfill } from 'https://unpkg.com/@lookingglass/webxr@0.6.0/dist/bundle/webxr.js'
+
+// Initialize Looking Glass WebXR polyfill if available (no hard dependency)
+LookingGlassWebXRPolyfill.init({
+    targetY: -1,
+    targetZ: 0,
+    targetDiam: 3,
+    fovy: (14 * Math.PI) / 180,
+});
+
+console.log(navigator.xr)
+
 const loadGsplat = async (app: AppBase, config: Config, progressCallback: (progress: number) => void) => {
     const { contents, contentUrl, unified, aa } = config;
     const c = contents as unknown as ArrayBuffer;
