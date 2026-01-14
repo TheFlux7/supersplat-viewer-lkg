@@ -433,6 +433,8 @@ class Viewer {
 
         const enableCameraFrame = !app.xr.active && (anyPostEffectEnabled(postEffectSettings) || settings.highPrecisionRendering);
 
+        camera.camera.frustumCulling = false;
+
         if (enableCameraFrame) {
             // create instance
             if (!this.cameraFrame) {
