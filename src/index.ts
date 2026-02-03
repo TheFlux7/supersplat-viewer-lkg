@@ -22,10 +22,14 @@ import { LookingGlassWebXRPolyfill } from '../looking-glass-webxr/dist/bundle/we
 
 // Initialize Looking Glass WebXR polyfill if available (no hard dependency)
 LookingGlassWebXRPolyfill.init({
-    targetY: -1,
+    targetX: 0,
+    targetY: 0,
     targetZ: 0,
-    targetDiam: 3,
-    fovy: (14 * Math.PI) / 180,
+    trackballX: Math.PI,
+    trackballY: 0,
+    targetDiam: 1,
+    fovy: (66 * Math.PI) / 180,
+    // capturing: true,
 });
 
 console.log(navigator.xr)
